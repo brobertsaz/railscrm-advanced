@@ -1,58 +1,59 @@
-%h2
-  Welcome to your Dashboard
-%hr
-%h4
-  Leads assigned:
-%br/
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        Name
-      %th
-        Company
-      %th
-        Status
-      %th
-        Created Date
-  %tbody
-    - if @leads.present?
-      - @leads.each do |lead|
-        %tr
-          %td
-            = link_to lead.full_name.titleize, lead_path(lead)
-          %td
-            = lead.company
-          %td
-            = lead.lead_status.to_s.capitalize
-          %td
-            = lead.created_at.to_date
-%br
-%hr
-%h4
-  Tasks assigned:
-%br/
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        Name
-      %th
-        Due Date
-      %th
-        Task Type
-      %th
-        Lead
-  %tbody
-    - if @tasks.present?
-      - @tasks.sort_by(&:due_date).each do |task|
-        %tr
-          %td
-            = link_to task.task_name.titleize, task_path(task)
-          %td
-            = task.due_date
-          %td
-            = task.task_type.titleize
-          %td
-            = task.lead_for_task
+.span9
+  %h2
+    Welcome to your Dashboard
+  %hr
+  %h4
+    Leads assigned:
+  %br/
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          Name
+        %th
+          Company
+        %th
+          Status
+        %th
+          Created Date
+    %tbody
+      - if @leads.present?
+        - @leads.each do |lead|
+          %tr
+            %td
+              = link_to lead.full_name.titleize, lead_path(lead)
+            %td
+              = lead.company
+            %td
+              = lead.lead_status.to_s.capitalize
+            %td
+              = lead.created_at.to_date
+  %br
+  %hr
+  %h4
+    Tasks assigned:
+  %br/
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          Name
+        %th
+          Due Date
+        %th
+          Task Type
+        %th
+          Lead
+    %tbody
+      - if @tasks.present?
+        - @tasks.sort_by(&:due_date).each do |task|
+          %tr
+            %td
+              = link_to task.task_name.titleize, task_path(task)
+            %td
+              = task.due_date
+            %td
+              = task.task_type.titleize
+            %td
+              = task.lead_for_task
 

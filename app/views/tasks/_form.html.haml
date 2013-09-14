@@ -10,7 +10,7 @@
         .span4.right
           = f.input :task_type, collection: (@task_types)
           = f.input :lead_for_task, collection: (@leads), label: 'For Lead'
-      .row.pull-right
+      .row.buttons
         = f.submit class: 'btn btn-primary'
         = link_to 'Cancel', tasks_path, class: "btn btn-danger"
 

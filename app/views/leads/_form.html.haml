@@ -2,29 +2,31 @@
   = simple_form_for @lead, :html => { :class => 'form-horizontal' }  do |f|
     %fieldset
       %legend Lead Info
-      .left-column
-        = f.input :first_name
-        = f.input :last_name
-        = f.input :email, as: :email
-        = f.input :phone
-        = f.input :company
-        = f.input :comments, as: :text, :input_html => {rows: 5}
-      .right-column
-        = f.input :lead_owner,      collection:(@lead_owner)
-        = f.input :interested_in,   collection:(@lead_interests)
-        = f.input :lead_status,     collection:(@lead_status)
-        = f.input :lead_source,     collection:(@lead_sources)
+      .row
+        .span4.left
+          = f.input :first_name
+          = f.input :last_name
+          = f.input :email, as: :email
+          = f.input :phone
+          = f.input :company
+          = f.input :comments, as: :text, :input_html => {rows: 5}
+        .span4.right
+          = f.input :lead_owner,      collection:(@lead_owner)
+          = f.input :interested_in,   collection:(@lead_interests)
+          = f.input :lead_status,     collection:(@lead_status)
+          = f.input :lead_source,     collection:(@lead_sources)
 
     %fieldset
       %legend Address Info
-      .left-column
-        = f.input :address
-        = f.input :city
-      .right-column
-        = f.input :state
-        = f.input :zip
+      .row
+        .span4.left
+          = f.input :address
+          = f.input :city
+        .span4.right
+          = f.input :state
+          = f.input :zip
     %br
-    .pull-right
+    .buttons
       = f.submit class: 'btn btn-primary'
       = link_to 'Cancel', leads_path, class: "btn btn-danger"
 

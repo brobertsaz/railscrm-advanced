@@ -16,7 +16,7 @@
           = f.input :contact_name
           = f.input :comments, as: :text, :input_html => {rows: 5}
 
-      .row.pull-right
+      .row.buttons
         = f.submit class: 'btn btn-primary'
         = link_to 'Cancel', leads_path, class: "btn btn-danger"
 

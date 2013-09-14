@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+  $(".sidebar").css({height: $(document).height() - 56 + 'px'});
+});
