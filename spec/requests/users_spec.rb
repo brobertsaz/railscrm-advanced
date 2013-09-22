@@ -30,7 +30,7 @@ describe "User Dashboard", vcr: true do
 
   it 'links to new task' do
     click_link 'New Task'
-    page.should have_content 'Task name'
+    page.should have_content 'Create New Task'
   end
 
   it 'links to new contact' do
@@ -45,7 +45,7 @@ describe "User Dashboard", vcr: true do
 
   it 'links to new opportunity' do
     click_link 'New Opportunity'
-    page.should have_content 'Opportunity name'
+    page.should have_content 'Create New Opportunity'
   end
 
   it 'has additional settings'do
@@ -65,5 +65,8 @@ describe "User Dashboard", vcr: true do
     page.should have_content @task.task_type.titleize
     page.should have_content @task.lead_for_task.titleize
   end
+
+  it 'can edit itself'
+  it 'can set notification settings'
 
 end

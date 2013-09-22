@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Contact requests', vcr: true do
-  
+
   before do
     @user   = FactoryGirl.create :user
     @organization = FactoryGirl.create :organization
@@ -22,7 +22,7 @@ describe 'Contact requests', vcr: true do
     page.should have_content 'New Contact Created'
     Contact.count.should == 1
   end
-    
+
   it 'has required contact information' do
     click_link 'Contacts'
     click_link 'Create Contact'
@@ -34,7 +34,7 @@ describe 'Contact requests', vcr: true do
     click_button 'Create Contact'
     page.should have_content "can't be blank"
     page.should_not have_content 'New Contact Created'
-    Contact.count.should == 0   
+    Contact.count.should == 0
   end
 
 
@@ -42,7 +42,7 @@ describe 'Contact requests', vcr: true do
     before do
       @contact = FactoryGirl.create :contact, organization: @organization.id
     end
-    
+
     it 'deletes contact' do
       click_link 'Contacts'
       click_link 'delete'
@@ -50,7 +50,7 @@ describe 'Contact requests', vcr: true do
       Contact.all.count.should == 0
     end
 
-    it 'edits contact' do 
+    it 'edits contact' do
       click_link 'Contacts'
       within '.table-striped' do
         click_link 'edit'
@@ -62,6 +62,7 @@ describe 'Contact requests', vcr: true do
       @contact.reload
       @contact.first_name.should == 'John'
     end
-    
+
+    it "should only show contacts that belong to its organization"
   end
 end

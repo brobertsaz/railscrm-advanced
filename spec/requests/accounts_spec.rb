@@ -59,6 +59,7 @@ describe 'Accounts', vcr: true do
       @account.name.should == 'Potato Factory'
     end
 
+    it "should only show accounts that belong to its organization"
   end
 
 end

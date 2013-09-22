@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Tasks', vcr: true do
-  
+
   before do
     @user   = FactoryGirl.create :user
     @user2  = FactoryGirl.create :user, email: 'test2@example.com', first_name: 'Jim'
@@ -17,33 +17,33 @@ describe 'Tasks', vcr: true do
     click_link 'Create Task'
     fill_in 'task_due_date',        with: '09/11/2012'
     select  "#{@user2.email}",       from: 'Assigned to'
-    select  'Call',                  from: 'Task type'
+    select  'Call',                  from: 'Type'
     select  "#{@lead.email}",        from: 'For Lead'
     fill_in "task_task_name",       with: 'test task'
     click_button 'Create Task'
     Task.count.should == 1
     page.should have_content 'New Task Created'
   end
-    
+
   it 'has required fields' do
     click_link 'Tasks'
     click_link 'Create Task'
     fill_in 'task_due_date',        with: '09/11/2012'
     select  "#{@user2.email}",       from: 'Assigned to'
-    select  'Call',                  from: 'Task type'
+    select  'Call',                  from: 'Type'
     select  "#{@lead.email}",        from: 'For Lead'
     click_button 'Create Task'
     Task.count.should == 0
     page.should_not have_content 'Task Updated'
   end
-    
+
   it 'notifies the user they have been assigned to a task' do
     click_link 'Tasks'
     click_link 'Create Task'
     fill_in "task_task_name",       with: 'another test task'
     fill_in 'task_due_date',        with: '09/11/2012'
     select  "#{@user2.email}",       from: 'Assigned to'
-    select  'Call',                  from: 'Task type'
+    select  'Call',                  from: 'Type'
     select  "#{@lead.email}",        from: 'For Lead'
     sleep 2
     click_button 'Create Task'
@@ -51,6 +51,8 @@ describe 'Tasks', vcr: true do
     ActionMailer::Base.deliveries.last.to.should include @user2.email
     ActionMailer::Base.deliveries.last.body.should include 'call' && @lead.email
   end
+
+  it "should allow assigning task to multiple users"
 
   context 'edit' do
     before do
@@ -65,7 +67,7 @@ describe 'Tasks', vcr: true do
       fill_in "task_task_name",         with: 'test task 2 updated'
       fill_in 'task_due_date',          with: '09/11/2012'
       select  "#{@user2.email}",         from: 'Assigned to'
-      select  'Email',                   from: 'Task type'
+      select  'Email',                   from: 'Type'
       select  "#{@lead.email}",          from: 'For Lead'
       sleep 2
       click_button 'Update Task'
@@ -83,14 +85,14 @@ describe 'Tasks', vcr: true do
       fill_in "task_task_name",         with: 'test task 2 updated'
       fill_in 'task_due_date',          with: '09/11/2012'
       select  "#{@user2.email}",         from: 'Assigned to'
-      select  'Email',                   from: 'Task type'
+      select  'Email',                   from: 'Type'
       select  "#{@lead.email}",          from: 'For Lead'
       sleep 2
       click_button 'Update Task'
       ActionMailer::Base.deliveries.last.to.should include @user2.email
       ActionMailer::Base.deliveries.last.body.should include 'test task 2 updated' && @lead.email
     end
-        
+
   end
 
   context 'delete' do
@@ -98,7 +100,7 @@ describe 'Tasks', vcr: true do
       @task   = FactoryGirl.create :task, lead_for_task: @lead.first_name, user: @user.id
     end
 
-    it 'deletes task' do  
+    it 'deletes task' do
       click_link 'Tasks'
       click_link 'delete'
       page.should have_content 'Task Deleted'

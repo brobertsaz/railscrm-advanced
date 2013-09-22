@@ -8,3 +8,4 @@ def login_as user, password = 'password'
   fill_in 'Password', with: password
   click_button 'Sign in'
 end
+

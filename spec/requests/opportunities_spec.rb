@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Opportunities", vcr: true do
-  
+
   before do
     @user     = FactoryGirl.create :user
     @organization = FactoryGirl.create :organization
@@ -9,7 +9,7 @@ describe "Opportunities", vcr: true do
     @organization.users << @user
     login_as @user
   end
-  
+
   it 'creates an opportunity' do
     click_link 'Opportunities'
     click_link 'Create New Opportunity'
@@ -53,5 +53,7 @@ describe "Opportunities", vcr: true do
       page.should have_content 'Opportunity Deleted'
     end
   end
+
+  it "should only show opportunities that belong to its organization"
 
 end
