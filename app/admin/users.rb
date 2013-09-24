@@ -15,6 +15,12 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :first_name
+      f.input :last_name
+      f.input :organization
+      f.input :company
+      f.input :phone
+      f.input :organization_role
     end
     f.actions
   end
