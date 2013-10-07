@@ -6,6 +6,7 @@ ActiveAdmin.register Organization do
     column :city
     column :state
     column :zip
+    column :max_users
     default_actions
   end
 
@@ -17,6 +18,7 @@ ActiveAdmin.register Organization do
       f.input :city
       f.input :state
       f.input :zip
+      f.input :max_users
     end
     f.actions
   end

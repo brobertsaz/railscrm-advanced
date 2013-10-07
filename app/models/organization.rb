@@ -8,6 +8,9 @@ class Organization
   field :city
   field :state
   field :zip
+  field :max_users, type: Integer
+
+  validates_presence_of :name, :phone, :max_users
 
   has_many :users
   has_many :leads

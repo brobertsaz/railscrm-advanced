@@ -8,5 +8,6 @@ FactoryGirl.define do
   city      'New York'
   state     'NY'
   zip       '12345'
+  max_users 5
   end
 end

@@ -38,10 +38,12 @@
                     %li= link_to 'Sign Out', :logout
                     %li= link_to 'Profile', edit_user_path(current_user)
                 - else
-                  = simple_form_for("user", url: user_session_path) do |f|
-                    = f.input :email, placeholder: 'user@example.com', required: false, autofocus: true, label: false
-                    = f.input :password, placeholder: "password", required: false, label: false
-                    = f.submit "Sign in", class: 'btn btn-primary'
+                  %ul.nav
+                    %li= link_to 'Sign In', :login
+                  / = simple_form_for("user", url: user_session_path) do |f|
+                  /   = f.input :email, placeholder: 'user@example.com', required: false, autofocus: true, label: false
+                  /   = f.input :password, placeholder: "password", required: false, label: false
+                  /   = f.submit "Sign in", class: 'btn btn-primary'
 
     .container-fluid
 
@@ -65,8 +67,6 @@
           = bootstrap_flash
           = yield
 
-      %footer
-        %p &copy; RailsCRM 2013
 
 :javascript
 

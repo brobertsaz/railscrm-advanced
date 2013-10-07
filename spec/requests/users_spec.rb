@@ -66,7 +66,7 @@ describe "User Dashboard", vcr: true do
     page.should have_content @task.lead_for_task.titleize
   end
 
-  it 'can edit itself'
+  it 'can edit its profile'
   it 'can set notification settings'
 
 end
