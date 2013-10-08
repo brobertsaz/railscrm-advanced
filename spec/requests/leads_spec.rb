@@ -171,6 +171,4 @@ describe "Leads" do
     end
   end
 
-  it "should only show leads that belong to its organization"
-
 end

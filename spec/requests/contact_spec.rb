@@ -62,7 +62,19 @@ describe 'Contact requests', vcr: true do
       @contact.reload
       @contact.first_name.should == 'John'
     end
+  end
 
-    it "should only show contacts that belong to its organization"
+  context 'with multiple organizations' do
+    before do
+      @contact = FactoryGirl.create :contact, organization: @organization.id
+      @another_organization = FactoryGirl.create :organization
+      @another_contact = FactoryGirl.create :contact, organization: @another_organization.id
+    end
+
+    it "should only show contacts that belong to its organization" do
+      visit contacts_path
+      page.should have_content @contact.email
+      page.should_not have_content @another_contact.email
+    end
   end
 end

@@ -1,15 +1,16 @@
 require 'spec_helper'
 
 describe "Organizations" do
-
-    it "have users"
-    it "have max number of users"
-    it "have organization settings"
-
     describe "Org Admin" do
+      before do
+        @organization = FactoryGirl.create :organization
+        @admin_user = FactoryGirl.create :org_admin, organization: @organization
+      end
+
+      it 'has organization dashboard'
       it "can add new user"
       it "sets user role"
+      it "can edit organization settings"
       it "cannot add more than max allowed users"
-      it "sets organization settings"
     end
 end

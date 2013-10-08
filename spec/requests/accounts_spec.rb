@@ -38,7 +38,7 @@ describe 'Accounts', vcr: true do
 
   context 'with an existing account' do
     before do
-      @account   = FactoryGirl.create :account, organization: @organization.id
+      @account = FactoryGirl.create :account, organization: @organization.id
     end
 
     it 'deletes account' do
@@ -58,8 +58,20 @@ describe 'Accounts', vcr: true do
       @account.reload
       @account.name.should == 'Potato Factory'
     end
+  end
 
-    it "should only show accounts that belong to its organization"
+  context 'with multiple organizations' do
+    before do
+      @account = FactoryGirl.create :account, name: 'My Account', organization: @organization.id
+      @another_organization = FactoryGirl.create :organization
+      @another_account = FactoryGirl.create :account, name: 'Not My Account', organization: @another_organization.id
+    end
+
+    it "should only show accounts that belong to its organization" do
+      visit accounts_path
+      page.should have_content 'My Account'
+      page.should_not have_content 'Not My Account'
+    end
   end
 
 end

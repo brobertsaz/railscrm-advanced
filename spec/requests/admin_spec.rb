@@ -28,7 +28,23 @@ describe "Admin" do
       page.should have_content 'Organization was successfully created.'
     end
 
-    it 'creates an organization admin'
+    # TODO Make the role a selection
+    it 'creates an organization admin' do
+      @test_org = FactoryGirl.create :organization
+      click_link 'Users'
+      click_link 'New User'
+      fill_in 'Email', with: 'newadmin@example.com'
+      fill_in 'Password', with: 'password'
+      fill_in 'Password confirmation', with: 'password'
+      fill_in 'First name', with: 'New'
+      fill_in 'Last name', with: 'Admin'
+      select @test_org.name, from: 'Organization'
+      fill_in 'Phone', with: '9991231234'
+      fill_in 'Organization role', with: 'Admin'
+      click_button 'Create User'
+      page.should have_content 'User was successfully created.'
+    end
+
     it 'cancels organization'
     it 'bans user'
 
