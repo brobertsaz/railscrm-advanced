@@ -20,6 +20,7 @@ gem 'bcrypt-ruby'
 gem 'font-awesome-rails'
 gem 'newrelic_rpm'
 gem 'activeadmin-mongoid'
+gem 'mail_form', ">= 1.3.0"
 
 group :production do
   gem 'thin'

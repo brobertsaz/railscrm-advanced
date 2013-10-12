@@ -33,6 +33,8 @@
                 %li= link_to "Opportunities", :opportunities
             .navbar-form.navbar-right
               .form-group
+                %ul.nav
+                  %li= link_to 'Contact Us', new_contact_form_path
                 - if user_signed_in?
                   %ul.nav
                     %li= link_to 'Sign Out', :logout

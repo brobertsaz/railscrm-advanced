@@ -1,5 +1,9 @@
 SassRailscrm::Application.routes.draw do
 
+  get "contact_form/new"
+
+  get "contact_form/create"
+
   root to: "pages#index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -34,6 +38,7 @@ SassRailscrm::Application.routes.draw do
     resources :organizations
   end
 
+  resources :contact_forms
   resources :tasks
   resources :contacts
   resources :accounts
