@@ -8,8 +8,8 @@ class ContactFormsController < ApplicationController
   def create
     begin
       @contact_form = ContactForm.new(params[:contact_form])
-      if @contact_form.save
-        ContactFormMailer.deliver_form(@contact_form).deliver
+      if @contact_form.deliver
+        # ContactFormMailer.deliver_form(@contact_form).deliver
         redirect_to root_path
         flash[:notice] = 'Thank you for your message!'
       else
