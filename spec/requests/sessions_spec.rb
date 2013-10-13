@@ -10,8 +10,8 @@ describe "Sessions" do
   it 'logins in user' do
     visit root_path
     click_link 'Sign In'
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     click_button 'Sign in'
     page.should have_content "Welcome to your Dashboard"
   end

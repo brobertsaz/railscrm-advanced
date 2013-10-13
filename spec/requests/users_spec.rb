@@ -68,9 +68,9 @@ describe "User Dashboard", vcr: true do
 
   it 'can create its profile' do
     click_link 'Profile'
-    fill_in 'First name', with: 'Bill'
-    fill_in 'Last name', with: 'Gates'
-    fill_in 'Phone', with: '8001231234'
+    fill_in 'user_first_name', with: 'Bill'
+    fill_in 'user_last_name', with: 'Gates'
+    fill_in 'user_phone', with: '8001231234'
     click_button 'Save'
     page.should have_content 'User has been successfully updated'
   end

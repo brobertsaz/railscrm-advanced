@@ -1,15 +1,16 @@
-.span4.offset4
-  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    %fieldset
-      #legend
-        %legend Login
-      .control-group
-        = f.input :email, required: false, autofocus: true, class: 'input-xlarge'
-      .control-group
-        = f.input :password, :required => false
-      .control-group
-        = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-      .control-group
-        .controls
-          = f.button :submit, "Sign in", class: 'btn btn-success'
-    = render "devise/shared/links"
+.container.login-page
+  .content
+    .login-form
+      %h2 Login
+      %form
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        %fieldset
+          .control-group
+            = f.input :email, required: false, autofocus: true, label: false, placeholder: 'test@example.com'
+          .control-group
+            = f.input :password, required: false, label: false, placeholder: 'password'
+          .control-group
+            = f.input :remember_me, as: :boolean, inline_label: 'Remember me', label: false if devise_mapping.rememberable?
+          %button.btn.primary{type: "submit"} Sign in
+
+      = render "devise/shared/links"
