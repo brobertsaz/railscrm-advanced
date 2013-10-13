@@ -60,10 +60,13 @@
               %ul.nav.nav-list
                 %li= link_to "Web-to-Lead Form", :web_to_lead
 
-        .span8
-          = bootstrap_flash
-          = yield
-
+          .span8
+            = bootstrap_flash
+            = yield
+        - else
+          .span8.offset1
+            = bootstrap_flash
+            = yield
 
 :javascript
 
