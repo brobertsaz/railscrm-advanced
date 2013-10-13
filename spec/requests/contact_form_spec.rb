@@ -10,7 +10,7 @@ describe "ContactForm" do
     click_button 'Send message'
     page.body.should have_content('Thank you for your message')
     ActionMailer::Base.deliveries.last.to.should include('broberts_az@yahoo.com')
-    ActionMailer::Base.deliveries.last.from.should include('test@example.com')
+    ActionMailer::Base.deliveries.last.from.should include('no-reply@railscrm.com')
   end
 
   it "does not deliver a message with a missing email" do

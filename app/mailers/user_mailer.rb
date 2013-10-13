@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: 'no-reply@rebel-outpost.com'
-  
+  default from: 'no-reply@railscrm.com'
+
   def reset_password(user)
     @user = user
     mail(to: @user.email, subject: 'Password Reset')
@@ -10,5 +10,5 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(to: @user.email, subject: 'RailsCRM Approval')
   end
-  
+
 end

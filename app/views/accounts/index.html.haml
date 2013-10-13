@@ -1,34 +1,35 @@
-.functions.pull-right
-  = link_to 'Create Account', new_account_path, class: 'btn'
+.span10
+  .functions.pull-right
+    = link_to 'Create Account', new_account_path, class: 'btn'
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        Account Name
-      %th
-        Assigned To
-      %th
-        Phone
-      %th
-        Website
-      %th
-        Email
-      %th
-        Actions
-  %tbody
-    - @accounts.each do |account|
+  %table.table.table-striped
+    %thead
       %tr
-        %td
-          = account.name
-        %td
-          = account.assigned_to.to_s
-        %td
-          = account.phone
-        %td
-          = account.website
-        %td
-          = account.email
-        %td
-          = link_to '', account_path(account), class: 'icon-edit', id: 'edit'
-          = link_to '', account_path(account), method: 'delete', class: 'icon-trash', data: {confirm: 'Are you sure that you want to delete this account?'}, id: 'delete'
+        %th
+          Account Name
+        %th
+          Assigned To
+        %th
+          Phone
+        %th
+          Website
+        %th
+          Email
+        %th
+          Actions
+    %tbody
+      - @accounts.each do |account|
+        %tr
+          %td
+            = account.name
+          %td
+            = account.assigned_to.to_s
+          %td
+            = account.phone
+          %td
+            = account.website
+          %td
+            = account.email
+          %td
+            = link_to '', account_path(account), class: 'icon-edit', id: 'edit'
+            = link_to '', account_path(account), method: 'delete', class: 'icon-trash', data: {confirm: 'Are you sure that you want to delete this account?'}, id: 'delete'

@@ -71,8 +71,8 @@ describe "Leads" do
     select  'Web Lead',         from: 'Lead source'
     sleep 1
     click_button 'Create Lead'
-    ActionMailer::Base.deliveries[0].to.should include @user2.email
-    ActionMailer::Base.deliveries[0].body.should include 'new lead'
+    ActionMailer::Base.deliveries.last.to.should include @user2.email
+    ActionMailer::Base.deliveries.last.body.should include 'new lead'
   end
 
   context 'with created lead' do

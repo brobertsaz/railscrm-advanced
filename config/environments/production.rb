@@ -53,6 +53,16 @@ SassRailscrm::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
+  config.action_mailer.default_url_options = { :host => 'railscrm.com' }
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    authentication: :login,
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)

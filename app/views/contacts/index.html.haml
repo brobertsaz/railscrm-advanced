@@ -1,40 +1,41 @@
-.functions.pull-right
-  = link_to 'Create Contact', new_contact_path, class: 'btn'
+.span10
+  .functions.pull-right
+    = link_to 'Create Contact', new_contact_path, class: 'btn'
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        First
-      %th
-        Last
-      %th
-        Company
-      %th
-        E-mail
-      %th
-        Phone
-      %th
-        Address
-      %th
-        Actions
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          First
+        %th
+          Last
+        %th
+          Company
+        %th
+          E-mail
+        %th
+          Phone
+        %th
+          Address
+        %th
+          Actions
 
-  %tbody
-    - if @contacts.present?
-      - @contacts.each do |f|
-        %tr
-          %td
-            = f.first_name
-          %td
-            = f.last_name
-          %td
-            = f.company
-          %td
-            =f.email
-          %td
-            =f.phone
-          %td
-            =f.address
-          %td
-            = link_to '', contact_path(f), class: 'icon-edit', id: 'edit'
-            = link_to '', contact_path(f), method: 'delete', class: 'icon-trash', data: {confirm: 'Are you sure that you want to delete this contact?'}, id: 'delete'
+    %tbody
+      - if @contacts.present?
+        - @contacts.each do |f|
+          %tr
+            %td
+              = f.first_name
+            %td
+              = f.last_name
+            %td
+              = f.company
+            %td
+              =f.email
+            %td
+              =f.phone
+            %td
+              =f.address
+            %td
+              = link_to '', contact_path(f), class: 'icon-edit', id: 'edit'
+              = link_to '', contact_path(f), method: 'delete', class: 'icon-trash', data: {confirm: 'Are you sure that you want to delete this contact?'}, id: 'delete'

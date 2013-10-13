@@ -1,13 +1,13 @@
 class LeadMailer < ActionMailer::Base
-  default from: 'no-reply@rebel-outpost.com'
+  default from: 'no-reply@railscrm.com'
 
   def notify_new_lead(user, lead)
     @user = user
     @lead = lead
     mail(to: @user, subject: 'A new lead has been assigned to you on RailsCRM')
   end
-  
-  def notify_updated_lead(user, lead) 
+
+  def notify_updated_lead(user, lead)
     @user = user
     @lead = lead
     mail(to: @user, subject: 'A lead you have been assigned to on RailsCRM has been updated')

@@ -11,8 +11,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.update_attributes params[:user]
     if @user.save
-      redirect_to :back, notice: 'Updated user'
+      redirect_to :back, notice: 'User has been successfully updated'
+    else
+      redirect_to :back, error: "User was unable to be updated"
     end
   end
 end

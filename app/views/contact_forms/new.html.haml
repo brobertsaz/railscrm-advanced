@@ -1,9 +1,17 @@
-.span6
-  %form
+.span6.offset3
+  %h2
+    Request more information
+  %p
+    If you would like to know more about RailsCRM or if you have any comments or questions, feel free to either
+    %a{href: 'mailto:broberts_az@yahoo.com'}>
+      email us,
+    or fill out our form.
+  .contact-us
     = simple_form_for @contact_form do |f|
-      = f.input :name, :required => false
-      = f.input :email, :required => false
-      = f.input :message, :as => :text, :required => false
+      = f.input :name, required: false
+      = f.input :email, required: false
+      = f.input :request_type, collection: @request_types
+      = f.input :message, :as => :text, :required => false, input_html: {rows: '5', cols: '90'}
       .hidden
         = f.input :nickname, :hint => 'Leave this field blank!'
-      = f.button :submit, 'Send message', class: '.btn.btn-primary.input-medium.pull-right'
+      = f.button :submit, 'Send message', class: 'btn btn-primary'

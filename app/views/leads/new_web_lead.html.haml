@@ -1,4 +1,4 @@
-.web-to-lead
+.web-to-lead.well.span8
   %h2
     New Web Form
   %br
@@ -12,15 +12,23 @@
       %fieldset
         %legend Lead Info
         .row
-          %p
-            Redirect URL
-            =text_field_tag :redirect_url
-          %br
+          .span4
+            %p
+              Redirect URL
+              =text_field_tag :redirect_url
+        %br/
         .row
-          -for a in 0..@lead.size - 1 do
-            =check_box_tag @lead[a]
-            =@lead[a].titleize
-            %br
+          .span3
+            -for a in 0..@lead.size/2-1 do
+              =check_box_tag @lead[a]
+              =@lead[a]
+              %br
+          .span3
+            =hidden_field_tag :lead,@lead
+            -for b in @lead.size/2..@lead.size-1 do
+              =check_box_tag @lead[b]
+              =@lead[b]
+              %br
 
         %br
         = submit_tag "Create Form", class: 'btn btn-primary'

@@ -7,7 +7,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :phone
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -51,6 +51,9 @@ class User
   field :phone
   field :organization_role
 
+  def profile_completed?
+    first_name != nil && last_name != nil && phone != nil
+  end
   # def full_name
   #   self.first_name + " " + self.last_name
   # end

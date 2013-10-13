@@ -21,7 +21,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") RailsCRM
+          %a.brand(href="/") RailsCRM
           .container.nav-collapse
             - if user_signed_in?
               %ul.nav
@@ -33,19 +33,14 @@
                 %li= link_to "Opportunities", :opportunities
             .navbar-form.navbar-right
               .form-group
-                %ul.nav
-                  %li= link_to 'Contact Us', new_contact_form_path
                 - if user_signed_in?
                   %ul.nav
                     %li= link_to 'Sign Out', :logout
                     %li= link_to 'Profile', edit_user_path(current_user)
                 - else
                   %ul.nav
+                    %li= link_to 'Contact Us', :contact_us
                     %li= link_to 'Sign In', :login
-                  / = simple_form_for("user", url: user_session_path) do |f|
-                  /   = f.input :email, placeholder: 'user@example.com', required: false, autofocus: true, label: false
-                  /   = f.input :password, placeholder: "password", required: false, label: false
-                  /   = f.submit "Sign in", class: 'btn btn-primary'
 
     .container-fluid
 
@@ -65,7 +60,7 @@
               %ul.nav.nav-list
                 %li= link_to "Web-to-Lead Form", :web_to_lead
 
-        .span10
+        .span8
           = bootstrap_flash
           = yield
 

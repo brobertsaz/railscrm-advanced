@@ -66,7 +66,15 @@ describe "User Dashboard", vcr: true do
     page.should have_content @task.lead_for_task.titleize
   end
 
-  it 'can edit its profile'
+  it 'can create its profile' do
+    click_link 'Profile'
+    fill_in 'First name', with: 'Bill'
+    fill_in 'Last name', with: 'Gates'
+    fill_in 'Phone', with: '8001231234'
+    click_button 'Save'
+    page.should have_content 'User has been successfully updated'
+  end
+
   it 'can set notification settings'
 
 end

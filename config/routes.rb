@@ -22,6 +22,8 @@ SassRailscrm::Application.routes.draw do
   match "create_lead" => "leads#create_web_lead", as: "create_lead"
   match "generate" => "leads#external_form"
 
+  match 'contact_us' => 'contact_forms#new', as: 'contact_us'
+
   resources :users
   resources :leads do
     resources :notes
