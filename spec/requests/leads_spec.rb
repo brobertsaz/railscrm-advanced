@@ -127,7 +127,7 @@ describe "Leads" do
       page.should_not have_content 'Bill Gates'
     end
 
-    it 'creates a note', js: true do
+    it 'creates a note' do
       visit lead_path @lead
       fill_in 'Content', with: 'this is a note'
       select "Follow Up", from: "Note type"
