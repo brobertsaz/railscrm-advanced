@@ -1,14 +1,16 @@
 .front-page
   .row-fluid
     %br
-      %h2 Rails CRM - Customer Relations Management
+      %h2{style: 'text-align:center;'} Rails CRM - Customer Relations Management
       %p
         Welcome to RailsCRM.  RailsCRM is available on Github and soon will be avalable as a software as a service.  I have been torn between offering a SaaS or not but this will not change the fact that all versions of RailsCRM are open sourced and will remain so.
+      %p
+        What does RailsCRM do?  A Customer Relations Management system is used to track leads and opportunities for your company.  RailsCRM can be used to connect to your websites contact us form and create a lead when your form is filled out.
       %p
         I want to make RailsCRM something that is easy to use and something that people want to use.  In order to do that, I need feedback from the few of you that are using it or thinking of using it.  If you have ideas that you would like to see implemented, please let me know.  I will be adding a contact form shortly to make this easier to do.
       %p
         Parden the changes as I make this transition...
-
+      %br
       .well.trial
         %h2 Try it  out
         %p
@@ -26,13 +28,19 @@
       %h2 Want to learn more?
       %p
         If you would like to learn more about Rails CRM or have any questions, feel free to
-        %a{:href => "mailto:broberts_az@yahoo.com", :target => "_blank"} send me an email.
+        %a{:href => "mailto:broberts_az@yahoo.com", :target => "_blank"} send me an email
+        or fill out our
+        %a{href: "/contact_us"} info form.
+      %p
         I am interested in hearing your comments/suggestions or if there is interest for a hosted solution.
+
+      %h2 Plans (coming soon)
+      %br
 
   .row-fluid
     .span3.first
-      .well
-        %h2.muted Silver
+      .well.plans
+        .muted Silver
         %p
           %span.label POPULAR
         %ul
@@ -47,8 +55,8 @@
         /     %i.icon-ok
         /     Select plan
     .span3.second
-      .well
-        %h2.text-warning Bronze
+      .well.plans
+        .text-warning Bronze
         %p
           %span.label.label-success POPULAR
         %ul
@@ -63,8 +71,8 @@
         /     %i.icon-ok
         /     Select plan
     .span3.third
-      .well
-        %h2.text-info Economy
+      .well.plans
+        .text-info Economy
         %p
           %span.label.label-info FREE
         %ul

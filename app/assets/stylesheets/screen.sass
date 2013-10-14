@@ -1,5 +1,8 @@
 body
-  background-color: #fff
+  background-color: #bdbdbd
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-weight: 300
+  font-size: 14px
 .navbar-right
   float: right
 .navbar .brand
@@ -42,6 +45,12 @@ form
   width: 800px
   background-color: #eee
   margin-right: 75px
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  border-radius: 10px 10px 10px 10px
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  box-shadow: 0 1px 2px rgba(0,0,0,.15)
   h2
     padding-left: 20px
     padding-top: 20px
@@ -52,17 +61,22 @@ form
     padding-left: 20px
 
 .sidebar
-  color: #F01440
   background-color: #eee
   margin-left: 0px
-  margin-top: -20px
+  margin-top: 10px
   padding-left: 10px
   padding-right: 10px
-  padding-top: 10px
-  // border-left: 1px solid #cccccc
-  // border-right: 1px solid #cccccc
+  height: 300px !important
+  border: 1px solid #666
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  border-radius: 10px 10px 10px 10px
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  box-shadow: 0 1px 2px rgba(0,0,0,.15)
   .nav-list
     margin-left: 10px
+    font-size: 14px
 
 .buttons
   float: right
@@ -87,21 +101,34 @@ footer
 
 h2
   font-size: 24px
-body
-  font-size: 12px
 
 .table-striped tbody>tr:nth-child(even)>td
-  background-color: #E0E0E0
+  // background-color: #E0E0E0
 
 table
   thead
     color: #FFFFFF
-    background-color: #D31515
-    background-image: -webkit-linear-gradient(top, #D31515, #8d0e0e)
-    background-image: -moz-linear-gradient(top, #D31515, #8d0e0e)
-    background-image: -ms-linear-gradient(top, #D31515, #8d0e0e)
-    background-image: -o-linear-gradient(top, #D31515, #8d0e0e)
-    background-image: linear-gradient(to bottom, #D31515, #8d0e0e)
+    background-color: #999
+    background-image: -webkit-linear-gradient(top, #ACACAC, #333333)
+    background-image: -moz-linear-gradient(top, #ACACAC, #333333)
+    background-image: -ms-linear-gradient(top, #ACACAC, #333333)
+    background-image: -o-linear-gradient(top, #ACACAC, #333333)
+    background-image: linear-gradient(to bottom, #ACACAC, #333333)
+
+.span10.well
+  margin-top: 10px
+.well.plans
+  min-height: 20px
+  padding: 19px
+  margin-bottom: 20px
+  background-color: #f5f5f5
+  border: 1px solid #e3e3e3
+  -webkit-border-radius: 0 0 10px 10px
+  -moz-border-radius: 0 0 10px 10px
+  border-radius: 0 0 10px 10px
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
 
 .span3.first
   margin-left: 38px !important
@@ -113,14 +140,40 @@ table
 .front-page
   margin: 0 auto
   width: 900px
+  background: #f8f8f8
+  padding: 0 40px 40px 40px
+  border: 1px solid #666
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  border-radius: 10px 10px 10px 10px
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  box-shadow: 0 1px 2px rgba(0,0,0,.15)
+  margin-bottom: 30px
   a
     font-weight: bold
+  .well
+    background-color: #999
+    .label
+      margin-top: 10px
   .well.trial
     margin: 0 auto
     width: 275px
-    background: #999
+    border: 1px solid #666
+    background: #fff
+    -webkit-border-radius: 10px 10px 10px 10px
+    -moz-border-radius: 10px 10px 10px 10px
+    border-radius: 10px 10px 10px 10px
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
+    box-shadow: 0 1px 2px rgba(0,0,0,.15)
     h2
+      margin: 0
       text-align: center
+    p
+      font-weight: bold
+      text-align: center
+
 .contact-us
   margin-left: 10px
   input[type=text], input[type=email]
@@ -169,4 +222,23 @@ table
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
   box-shadow: 0 1px 2px rgba(0,0,0,.15)
 
+.well
+  background-color: #eee
+  border: 1px solid #eee
 
+.well
+  .muted, .text-warning, .text-info
+    background: #fff
+    padding-top: 6px
+    font-size: 16px
+    padding-left: 20px
+    font-weight: bold
+    margin-top: -50px
+    height: 30px
+    border: 1px solid #999
+    margin-left: -19px
+    margin-right: -19px
+    -webkit-border-radius: 10px 10px 0 0
+    -moz-border-radius: 10px 10px 0 0
+    border-radius: 10px 10px 0 0
+    border-bottom: 0
