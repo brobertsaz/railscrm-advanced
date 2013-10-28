@@ -1,0 +1,17 @@
+.container.new-organization
+  .content
+    .registration-form
+      %h2 Create your new Organization
+      %form
+      = simple_form_for @organization, :html => { :class => 'form-horizontal' }  do |f|
+        %fieldset
+          = f.input :name
+          = f.input :phone
+          = f.input :address
+          = f.input :city
+          = f.input :state, collection: (us_states)
+          = f.input :zip
+        .clearfix
+        .buttons
+          = f.submit class: 'btn btn-primary'
+          / = link_to 'Cancel', accounts_path, class: "btn btn-danger"

@@ -1,0 +1,51 @@
+.front-page
+  %h2 Plans and Pricing (coming soon)
+  %br
+  %br/
+  .row-fluid
+    .span3.first
+      .well.plans
+        .muted Silver
+        %p
+          %span.label POPULAR
+        %ul
+          %li 5 users
+          %li Unlimited access
+        %p Lorem ipsum dolor sit amet
+        %hr
+          / %h3 $ / month
+          / %hr/
+        / %p
+        /   %a.btn.btn-large{href: "#"}
+        /     %i.icon-ok
+        /     Select plan
+    .span3.second
+      .well.plans
+        .text-warning Bronze
+        %p
+          %span.label.label-success POPULAR
+        %ul
+          %li 10 users
+          %li Unlimited access with no limits
+        %p Lorem ipsum dolor sit amet
+        %hr
+        / %h3 $ / month
+        / %hr/
+        / %p
+        /   %a.btn.btn-success.btn-large{href: "#"}
+        /     %i.icon-ok
+        /     Select plan
+    .span3.third
+      .well.plans
+        .text-info Economy
+        %p
+          %span.label.label-info FREE
+        %ul
+          %li 1 user
+          %li 5TB of space
+        %p Lorem ipsum dolor sit amet
+        %hr
+        %h3 FREE
+        %hr/
+        %p
+          =link_to 'Select free', new_user_registration_path, class: 'btn btn-large'

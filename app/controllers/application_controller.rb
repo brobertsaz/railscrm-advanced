@@ -4,10 +4,14 @@ class ApplicationController < ActionController::Base
   before_filter :set_current_user
 
   def after_sign_in_path_for(resource)
-    if resource.class != AdminUser
-      dashboard_path
-    else
+    if resource.class == AdminUser
       admin_root_path
+    else
+      if resource.organization
+        dashboard_path
+      else
+        new_organization_path
+      end
     end
   end
 

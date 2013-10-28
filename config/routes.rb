@@ -1,7 +1,6 @@
 SassRailscrm::Application.routes.draw do
 
   get "contact_form/new"
-
   get "contact_form/create"
 
   root to: "pages#index"
@@ -23,6 +22,7 @@ SassRailscrm::Application.routes.draw do
   match "generate" => "leads#external_form"
 
   match 'contact_us' => 'contact_forms#new', as: 'contact_us'
+  match 'pricing' => 'pages#pricing', as: 'pricing'
 
   resources :users
   resources :leads do
@@ -39,6 +39,8 @@ SassRailscrm::Application.routes.draw do
     resources :users
     resources :organizations
   end
+
+  resources :organizations
 
   resources :contact_forms
   resources :tasks

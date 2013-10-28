@@ -1,0 +1,15 @@
+.container.login-page
+  .content
+    .login-form
+      %h2 Register a new account
+      %form
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+        %fieldset
+          .control-group
+            = f.input :email, required: true, autofocus: true
+          .control-group
+            = f.input :password, required: true
+          .control-group
+            = f.input :password_confirmation, required: true
+          %button.btn.primary{type: "submit"} Sign up
