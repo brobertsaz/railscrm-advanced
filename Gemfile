@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'gibberish'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.15'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
