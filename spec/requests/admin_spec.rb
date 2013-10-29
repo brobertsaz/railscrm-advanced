@@ -18,7 +18,7 @@ describe "Admin" do
       login_admin @admin_user
     end
 
-    it 'creates an organization', js: true do
+    it 'creates an organization' do
       click_link 'Organizations'
       click_link 'New Organization'
       fill_in 'Name', with: 'New Organization'

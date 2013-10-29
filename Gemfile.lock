@@ -301,7 +301,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    vcr (2.6.0)
     warden (1.2.3)
       rack (>= 1.0)
     websocket (1.0.7)
@@ -353,4 +352,3 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier
   unicorn
-  vcr

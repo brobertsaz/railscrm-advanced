@@ -43,7 +43,6 @@ group :test, :development do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
-  gem 'vcr'
   gem 'fakeweb'
   gem 'email_spec'
   gem 'pry'

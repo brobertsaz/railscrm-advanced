@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Accounts', vcr: true do
+describe 'Accounts' do
 
   before do
     @user   = FactoryGirl.create :user

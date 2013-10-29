@@ -4,7 +4,6 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :organization
-    column :company
     column :phone
     column :organization_role
     default_actions
@@ -20,7 +19,6 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :organization
-      f.input :company
       f.input :phone
       f.input :organization_role
     end
