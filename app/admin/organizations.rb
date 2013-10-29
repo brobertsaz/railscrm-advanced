@@ -10,6 +10,8 @@ ActiveAdmin.register Organization do
     default_actions
   end
 
+  filter :name
+
   form do |f|
     f.inputs "Organization Details" do
       f.input :name
