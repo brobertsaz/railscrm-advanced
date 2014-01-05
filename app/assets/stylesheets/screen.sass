@@ -1,16 +1,16 @@
 body
-  background-color: #bdbdbd
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  background-color: #bdbdbd !important
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important
   font-weight: 300
-  font-size: 14px
+  font-size: 14px !important
 .navbar-right
   float: right
 .navbar .brand
-  color: #FFFFFF
+  color: #FFFFFF !important
 
 .navbar .nav>li>a
-  color: #FFFFFF
-  text-shadow: none
+  color: #FFFFFF !important
+  text-shadow: none !important
 
 
 .navbar-inner
@@ -45,9 +45,9 @@ form
   width: 800px
   background-color: #eee
   margin-right: 75px
-  -webkit-border-radius: 10px 10px 10px 10px
-  -moz-border-radius: 10px 10px 10px 10px
-  border-radius: 10px 10px 10px 10px
+  -webkit-border-radius: 4px 4px 4px 4px
+  -moz-border-radius: 4px 4px 4px 4px
+  border-radius: 4px 4px 4px 4px
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15)
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
   box-shadow: 0 1px 2px rgba(0,0,0,.15)
@@ -64,13 +64,14 @@ form
   background-color: #eee
   margin-left: 0px
   margin-top: 10px
+  padding-top: 10px
   padding-left: 10px
   padding-right: 10px
   height: 300px !important
-  border: 1px solid #666
-  -webkit-border-radius: 10px 10px 10px 10px
-  -moz-border-radius: 10px 10px 10px 10px
-  border-radius: 10px 10px 10px 10px
+  // border: 1px solid #999
+  -webkit-border-radius: 4px 4px 4px 4px
+  -moz-border-radius: 4px 4px 4px 4px
+  border-radius: 4px 4px 4px 4px
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15)
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15)
   box-shadow: 0 1px 2px rgba(0,0,0,.15)
@@ -94,11 +95,6 @@ footer
   text-align: center
   font-weight: bold
 
-.btn
-  margin-bottom: 5px
-.btn-danger
-  margin-top: 3px
-
 h2
   font-size: 24px
 
@@ -106,14 +102,15 @@ h2
   // background-color: #E0E0E0
 
 table
+  margin-top: 5px
   thead
     color: #FFFFFF
-    background-color: #999
-    background-image: -webkit-linear-gradient(top, #ACACAC, #333333)
-    background-image: -moz-linear-gradient(top, #ACACAC, #333333)
-    background-image: -ms-linear-gradient(top, #ACACAC, #333333)
-    background-image: -o-linear-gradient(top, #ACACAC, #333333)
-    background-image: linear-gradient(to bottom, #ACACAC, #333333)
+    background-image: -webkit-linear-gradient(top, #bb0808, #7e0b0b)
+    background-image: -moz-linear-gradient(top, #bb0808, #7e0b0b)
+    background-image: -ms-linear-gradient(top, #bb0808, #7e0b0b)
+    background-image: -o-linear-gradient(top, #bb0808, #7e0b0b)
+    background-image: linear-gradient(to bottom, #bb0808, #7e0b0b)
+
 
 .span10.well
   margin-top: 10px
@@ -253,3 +250,15 @@ table
     -moz-border-radius: 10px 10px 0 0
     border-radius: 10px 10px 0 0
     border-bottom: 0
+
+.functions
+  .btn
+    margin-bottom: 5px
+
+.link_to_new
+  display: inline-block
+  float: right
+  margin-right: 24px
+
+.new_note_section
+  display: none

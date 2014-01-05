@@ -10,5 +10,6 @@
  *
  *= require jquery.ui.all
  *= require_self
- *= require_tree .
+ *= require screen.sass
+ *= require bootstrap_and_overrides
  */

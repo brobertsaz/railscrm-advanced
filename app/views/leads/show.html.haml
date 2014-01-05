@@ -9,6 +9,8 @@
   %fieldset
     %legend{style: 'width:97%'}
       Lead Activities
+      .link_to_new
+        = link_to 'Add Note', "", class: 'btn btn-primary', id: 'add_new_note'
     .activities-section
       %h4 Recent Activity for #{@lead.full_name}:
       %p
@@ -37,19 +39,15 @@
                     / = link_to '', edit_lead_note_path(@lead, note), class: 'icon-edit', id: 'edit'
                     = link_to '', lead_note_path(@lead, note), method: 'delete', class: 'icon-trash', data: { confirm: 'Are you sure that you want to delete this note?'}, id: 'delete'
 
-      %p
-      - if @note
-        = render 'notes/edit'
-
-      %hr
-      %h3 Create a new note:
-      %p
-        = simple_form_for [@lead, Note.new] do |n|
-          = n.input :content, as: :text, input_html: {rows: 5, class: "field span7"}
-          = n.input :note_type, collection:[['Call Back', 'call'],['Email', 'email'], ['Follow Up', 'follow_up']]
-          = n.input :due_date, as: :string, input_html: { :class => 'jquery-ui-date'}
-          = n.submit 'Add new Note', class: 'btn btn-primary'
-
+      %br/
+      .new_note_section
+        %h4 Create a new note:
+        %p
+          = simple_form_for [@lead, Note.new] do |n|
+            = n.input :content, as: :text, input_html: {rows: 5, class: "field span7"}
+            = n.input :note_type, collection:[['Call Back', 'call'],['Email', 'email'], ['Follow Up', 'follow_up']]
+            = n.input :due_date, as: :string, input_html: { :class => 'jquery-ui-date'}
+            = n.submit 'Add new Note', class: 'btn btn-primary'
 
 
 
